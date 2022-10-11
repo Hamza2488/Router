@@ -1,0 +1,40 @@
+import React, { Profiler } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import About from "../Screen/about";
+import Contact from "../Screen/contact";
+import Home from "../Screen/home";
+import NotFound from "../Screen/notF";
+import Service from "../Screen/service"; 
+import Profile from "../Screen/profile"; 
+
+const WebRouter = () => {
+  return (
+
+    <Router>
+        
+        <div>
+
+     <Link to="/">Home</Link>
+     <Link to="about">About</Link>
+     <Link to="service">Service</Link>
+     <Link to="contact">Contact</Link>
+
+        </div>
+
+
+
+
+      <Routes>
+        <Route path="Home" element={<Home />} />
+        <Route path="About" element={<About />} />
+        <Route path="Service" element={<Service />} />
+        <Route path="Contact" element={<Contact />} />
+        <Route path="profile/:id" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
+        
+      </Routes>
+    </Router>
+  );
+};
+
+export default WebRouter;
